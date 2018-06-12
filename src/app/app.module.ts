@@ -2,29 +2,37 @@ import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
-
+import { FormsModule } from '@angular/forms';
 
 // Importing the AnimationsModule for Kendo UI
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Importing the ButtonsModule for Kendo UI
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { NavComponent } from './nav/nav.component';
+import { AuthService } from './services/auth.service';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ValueComponent
+    NavComponent,
+    HomeComponent,
+    RegisterComponent
 ],
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     // Register the modules
     BrowserAnimationsModule,
     ButtonsModule
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,6 +24,7 @@
     "@progress/kendo-angular-buttons": "^4.1.1",
     "@progress/kendo-angular-l10n": "^1.2.0",
     "@progress/kendo-theme-default": "^2.53.2",
+    "alertifyjs": "^1.11.1",
     "bootstrap": "^4.1.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",

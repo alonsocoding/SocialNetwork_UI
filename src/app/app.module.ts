@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 // Importing the AnimationsModule for Kendo UI
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { GridModule } from '@progress/kendo-angular-grid';
 
 // Importing the ButtonsModule for Kendo UI
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
@@ -15,25 +17,42 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { AlertifyService } from './services/alertify.service';
 
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { MemberListComponent } from './member-list/member-list.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { AuthGuard } from './guards/auth.guard';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    MemberListComponent,
+    ListsComponent,
+    MessagesComponent
 ],
   imports: [
+    InputsModule,
+    GridModule,
     BrowserModule,
     HttpModule,
     FormsModule,
     // Register the modules
     BrowserAnimationsModule,
-    ButtonsModule
+    ButtonsModule,
+    BsDropdownModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AuthService,
-    AlertifyService
+    AlertifyService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
